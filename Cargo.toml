@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [features]
-default = ["cuda_compute"]
+default = ["opencl_compute"]
 cuda_compute = []
 opencl_compute = []
 

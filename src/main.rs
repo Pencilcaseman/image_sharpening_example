@@ -1,9 +1,6 @@
-use std::collections::HashMap;
-
 use clap::Parser;
 use image::{buffer::ConvertBuffer, ImageError, RgbImage};
 use image_sharpen_rs::filter::sharpen;
-use lazy_static::lazy_static;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
