@@ -1,0 +1,29 @@
+[package]
+name = "image_sharpen_rs"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["cuda_compute"]
+cuda_compute = []
+opencl_compute = []
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = 3
+strip = true
+debug = false
+debug-assertions = false
+
+[dependencies]
+clap = { version = "4.5.7", features = ["derive"] }
+cudarc = { version = "0.11.6", features = ["cuda-12050"] }
+image = "0.25.1"
+lazy_static = "1.5.0"
+ocl = { version = "0.19.7", features = [
+    "opencl_version_2_0",
+    "opencl_version_2_1",
+] }
+rayon = "1.10.0"
